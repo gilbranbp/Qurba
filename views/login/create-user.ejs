@@ -1,0 +1,50 @@
+<div class="modal-dialog modal-sm">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Add User</h5>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <!-- <form class="frm_add_user" action="#"> -->
+                <div class="form-group row mb-2">
+                    <label class="col-form-label col-sm-3">Name<span class="text-danger"></span></label>
+                    <div class="col-lg-9">
+                        <input type="text" name="nama" class="form-control" required placeholder="Name" id="i_name">
+                    </div>
+                </div>
+                <div class="form-group row mb-2">
+                    <label class="col-form-label col-sm-3">Password<span class="text-danger"></span></label>
+                    <div class="col-lg-9">
+                        <input type="password" name="password" class="form-control" autocomplete="on" required placeholder="Password" id="i_password">
+                    </div>
+                </div>
+                <div class="form-group row mb-2">
+                    <label class="col-form-label col-sm-3">Email<span class="text-danger"></span></label>
+                    <div class="col-sm-9">
+                        <input type="email" name="email"  class="form-control" required placeholder="Email" id="i_email">
+                    </div>
+                </div>
+                <div class="form-group row mb-2">
+                    <label class="col-form-label col-sm-3">Phone No.<span class="text-danger"></span></label>
+                    <div class="col-sm-9">
+                        <input type="text" name="numbers"  class="form-control" required placeholder="No.telp" id="i_phone">
+                    </div>
+                </div>
+                <div class="mt-1" id="err_create" style="display:none"></div>
+                <div class="d-flex justify-content-end align-items-center m-0">
+                    <button class="btn btn-primary ml-1" id="btn_save"><i class="icon-floppy-disk mr-1"></i>Save</button>
+                </div>
+
+            <!-- </form> -->
+           
+        </div>
+        <!-- <div class="modal-footer"> -->
+            <!-- <button class="btn btn-secondary" data-dismiss="modal">
+                <i class="icon-cross2 font-size-base mr-1"></i> Cancel
+            </button>
+            <button class="btn btn-danger" type="button" id="save_user">
+                <i class="icon-database-check font-size-base mr-1"></i> Save User
+            </button> -->
+        <!-- </div> -->
+    </div>
+</div>

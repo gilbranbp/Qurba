@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>login</title>
+    <link rel="icon" href="/global_assets/images/favicon.png" type="image/x-icon" />
+
+    <!-- Global stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+    <link href="/global_assets/css/icons/icomoon/styles.min.css" rel="stylesheet" type="text/css">
+    <link href="/global_assets/css/icons/fontawesome/styles.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/custom.css" rel="stylesheet" type="text/css">
+    <!-- /global stylesheets -->
+
+    <!-- Core JS files -->
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/global_assets/plugins/ui/moment/moment.min.js"></script>
+    <script src="/global_assets/plugins/pickers/daterangepicker.js"></script>
+    <script src="/global_assets/plugins/notifications/sweet_alert.min.js"></script>
+    <!-- /core JS files -->
+
+    <script src="/assets/js/customs.js"></script>
+    <script src="/assets/js/app.js"></script>
+  
+</head>
+
+<style>
+    @media (min-width:769px) and (max-width:1024px){
+        .login_card{
+          display: flex;
+          justify-content: center;
+        } 
+        
+    }
+</style>
+
+<body class="bg-secondary">
+
+  <!-- Page content -->
+	<div class="page-content login-cover">
+
+		<!-- Main content -->
+		<div class="content-wrapper d-flex justify-content-center">
+
+			<!-- Inner content -->
+			<div class="content-inner">
+
+				<!-- Content area -->
+				  <!-- <div class="content d-flex justify-content-end align-items-center login_card"> -->
+				  <div class="content d-flex justify-content-center align-items-center login_card">
+            
+            <div class="col-6">
+              <form>
+                <div class="row box-form">
+                  
+                  <div class="col-12 right text-center">
+                    <img src="/global_assets/images/qurba.png" height="70" alt="logo" class="auth-logo">
+                   
+                    <br>
+                    <br>
+                    <br>
+                    
+                    <br>
+                    <br>
+                    <br>
+
+                    <div class="inputs">
+                      <input type="email" name="email" placeholder="Email">
+
+                      <br>
+
+                      <input type="password" name="password" placeholder="Password" autocomplete="password">
+
+                      <div class="mt-1" id="err" style="display:none"></div>
+                      <br>
+                      <!-- <a href="">Forgot Password?</a> -->
+                    </div>
+                      
+                      <br>
+                      <br>
+                      <br>
+
+                      <button class="btn btn-custom-secondary" id="login">SIGN IN</button>
+
+                      <br>
+                      <br>
+
+                      <!-- <a href="" style="color: #70798B;" id="btn_create_user">Create New Account</a> -->
+
+                  </div>
+                  
+                </div>
+              </form>
+          </div>
+
+          </div>
+
+          <!-- Modal -->
+					<div id="modal_create_user" class="modal fade" data-backdrop="static"></div>
+					<!-- Modal -->
+        <!-- /content area -->
+      </div>
+      <!-- /inner content -->
+    </div>
+    <!-- /main content -->
+  </div>
+  <!-- /page content -->
+
+    <script src="/scr/login/login.js"></script>
+    
+</body>
+</html>

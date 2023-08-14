@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<% include ../layouts/head %>
+	<link rel="stylesheet" href="/global_assets/plugins/ag-grid-community/dist/styles/ag-grid.css">
+	<link rel="stylesheet" href="/global_assets/plugins/ag-grid-community/dist/styles/ag-theme-alpine.css">
+</head>
+<style>
+	
+	.ag-cell-label-container, .ag-header-icon {
+		color: #4d5763;
+	}
+
+	.ag-header-row {
+		background-color: #FFF;
+	}
+
+	.ag-root-wrapper {
+		border-radius: 5px;
+	}
+	
+	.ag-theme-alpine .ag-root-wrapper {
+		border: none;
+	}
+
+	[class^='select2'] {
+		border-radius: 5px !important;
+	}
+
+	.select2-container--focus:not(.select2-container--disabled) .select2-selection--single:not(.select2-filled), .select2-container--open .select2-selection--single:not(.select2-filled) {
+		border: 1px solid #EEEEEE;
+		box-shadow: 0px 4px 4px rgba(255, 59, 59, 0.25);
+	}
+
+	.select2-selection--single{
+		color: #70798B !important;
+		font-size: 12px;
+	}
+	
+	.searchInput {
+		width: 100%;
+		padding: 0.5rem 1rem;
+		font-size: 12px;
+		border-radius: 5px;
+		border: 1px solid #EEEEEE;
+		background-color: #FDFDFD;
+		height: -webkit-fill-available;
+	}
+
+</style>
+
+<body>
+	<!-- Page content -->
+	<div class="page-content">
+		<% include ../layouts/sidebar %>
+
+		<!-- Main content -->
+		<div class="content-wrapper">
+			<!-- Inner content -->
+			<div class="content-inner">
+
+				<!-- Content area -->
+				<div class="content" style="margin: 16px;">
+
+					<div class="row">
+						<div class="col-12">
+							<a href="/store" class="d-inline-block">
+								<img src="/global_assets/images/qurba.png" class="d-none d-sm-block" alt="" style="height: 3rem;">
+								<!-- <img src="/global_assets/images/telkomsel.png" class="d-none d-sm-block" alt="" style="height: 2.125rem;"> -->
+								<!-- <img src="/global_assets/images/lgwhite.png" class="pt-1 d-sm-none" alt="" style="height: 2.125rem;"> -->
+							</a>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-12">
+							<div class="card">
+								<div class="card-body">
+									<div id="tbl_sales" style="height: 80vh;" class="ag-theme-alpine"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				<!-- /content area -->
+				</div>
+			</div>
+			<!-- /inner content -->
+
+		</div>
+		<!-- /main content -->
+
+	</div>
+	<!-- /page content -->
+
+	<script src="/scr/sales/sales.js"></script>
+
+	<script src="/global_assets/plugins/forms/validation/validate.min.js"></script>
+	<script src="/global_assets/plugins/notifications/sweet_alert.min.js"></script>
+	
+	<script src="/global_assets/plugins/ag-grid-enterprise/dist/ag-grid-enterprise.min.noStyle.js"></script>
+	<script src="/global_assets/plugins/select2/select2.min.js"></script>
+
+</body>
+
+</html>

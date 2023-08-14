@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<% include ../layouts/head %>
+	<link rel="stylesheet" href="/global_assets/plugins/ag-grid-community/dist/styles/ag-grid.css">
+	<link rel="stylesheet" href="/global_assets/plugins/ag-grid-community/dist/styles/ag-theme-alpine.css">
+</head>
+<style>
+	
+	.ag-cell-label-container, .ag-header-icon {
+		color: #4d5763;
+	}
+
+	.ag-header-row {
+		background-color: #FCFBFB;
+	}
+
+	.ag-root-wrapper {
+		border-radius: 5px;
+	}
+	
+	[class^='select2'] {
+		border-radius: 5px !important;
+	}
+
+	.select2-container--focus:not(.select2-container--disabled) .select2-selection--single:not(.select2-filled), .select2-container--open .select2-selection--single:not(.select2-filled) {
+		border: 1px solid #EEEEEE;
+		box-shadow: 0px 4px 4px rgba(255, 59, 59, 0.25);
+	}
+
+	.select2-selection--single{
+		color: #70798B !important;
+		font-size: 12px;
+	}
+	
+	.searchInput {
+		width: 100%;
+		padding: 0.5rem 1rem;
+		font-size: 12px;
+		border-radius: 5px;
+		border: 1px solid #EEEEEE;
+		background-color: #FDFDFD;
+		height: -webkit-fill-available;
+	}
+
+	.totalItem {
+		width: 40%;
+		padding: 0.5rem 1rem;
+		font-size: 12px;
+		border-radius: 5px;
+		border: 1px solid #EEEEEE;
+		background-color: #FDFDFD;
+		height: -webkit-fill-available;
+	}
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+
+	.item-image {
+		border-radius: 10px;
+		max-width: 100%;
+  		height: auto;
+	}
+
+</style>
+
+<body>
+	<!-- Page content -->
+	<div class="page-content">
+		<% include ../layouts/sidebar %>
+
+		<!-- Main content -->
+		<div class="content-wrapper">
+			<!-- Inner content -->
+			<div class="content-inner">
+
+				<!-- Content area -->
+				<div class="content" style="margin: 16px;">
+
+					<div class="row">
+						<div class="col-12">
+							<a href="/store" class="d-inline-block">
+								<img src="/global_assets/images/qurba.png" class="d-none d-sm-block" alt="" style="height: 3rem;">
+								<!-- <img src="/global_assets/images/telkomsel.png" class="d-none d-sm-block" alt="" style="height: 2.125rem;"> -->
+								<!-- <img src="/global_assets/images/lgwhite.png" class="pt-1 d-sm-none" alt="" style="height: 2.125rem;"> -->
+							</a>
+						</div>
+					</div>
+
+					<br>
+
+					<div class="row">
+						<div class="col-8">
+		
+							<div class="row">
+								<div class="col-10">
+									<input class="searchInput" id="input_search" type="text" name="search" placeholder="Search Product">
+								</div>
+								<div class="col-2">
+									<button class="btn btn-custom-primary btn-sm" id="btn_search">Search</button>
+								</div>
+		
+								
+							</div>
+		
+							<br>
+		
+							<div class="row">
+								<div class="col-3">
+									<select class="filter text-basic" name="i_zone" id="i_zone" style="width: 100%;">
+										<!-- <option value="All Category" selected>All Zone</option>
+										<option value="Category A">Zone A</option>
+										<option value="Category B">Zone B</option>
+										<option value="Category C">Zone C</option> -->
+									</select>
+								</div>
+								<div class="col-3">
+									<select class="filter text-basic" name="i_category" id="i_category" style="width: 100%;">
+										<!-- <option value="All Category" selected>All Category</option> -->
+										<!-- <option value="Category A">Category A</option>
+										<option value="Category B">Category B</option>
+										<option value="Category C">Category C</option> -->
+									</select>
+								</div>
+								<div class="col-3">
+									<select class="filter text-basic" name="i_type" id="i_type" style="width: 100%;">
+										<!-- <option value="All Category" selected>All Type</option>
+										<option value="Category A">Type A</option>
+										<option value="Category B">Type B</option>
+										<option value="Category C">Type C</option> -->
+									</select>
+								</div>
+								<div class="col-3">
+									<select class="filter text-basic" name="i_code" id="i_code" style="width: 100%;">
+										<!-- <option value="All Category" selected>All Code</option>
+										<option value="Category A">Code A</option>
+										<option value="Category B">Code B</option>
+										<option value="Category C">Code C</option> -->
+									</select>
+								</div>
+							</div>
+		
+							<br>
+
+							<h6 id="product_not_available_msg">Sorry, the product is currently unavailable.</h6>
+							
+							<div class="row" id="card_product" style="max-height: 70vh; overflow-y: auto;">
+							</div>
+							
+						</div>
+						<div class="col-4">
+							<div class="row">
+								<div class="col-12">
+									<div class="card" id="part_seller">
+										<div class="card-body">
+											<!-- <input class="searchInput" id="i_transaction_id" type="text" name="search" placeholder="Transaction ID" disabled> -->
+											<!-- <br> -->
+											<!-- <br> -->
+											<select class="filter text-basic" name="i_cashier" id="i_cashier" style="width: 100%;">
+												<option></option>
+											</select>
+											<br>
+											<br>
+											<select class="filter text-basic" name="i_agent" id="i_agent" style="width: 100%;">
+												<option></option>
+											</select>
+											
+											<br>
+											<br>
+											
+											<div class="row pl-2 pr-2">
+												<div class="col-6">
+													<p class="text-muted">Product</p>
+												</div>
+												<div class="col-3" style="text-align: center;">
+													<p class="text-muted">Item(s)</p>
+												</div>
+												<div class="col-3" style="text-align: center;">
+													<p class="text-muted">Total</p>
+												</div>
+											</div>
+											<div class="row pl-2 pr-2" id="card_transaction" style="max-height: 45vh; overflow-y: auto;">
+												
+											</div>
+
+											<hr class="mt-1 mb-1">
+
+											<div>
+												<span class="text-muted" style="font-size: 12px;">Total (before GST)</span>
+												<span class="text-muted" style="float: right; font-size: 12px;" id="i_price"></span>
+											</div>
+											<div>
+												<span style="font-weight: 600;">Total</span>
+												<span style="float: right; font-weight: 600;" id="i_total_price"></span>
+											</div>
+
+											<br>
+
+											<div class="row" style="justify-content: center;">
+												<button class="btn btn-custom-primary btn-sm mb-2" id="btn_check_out" style="width: 60%;">Check Out</button>
+												<button class="btn btn-custom-outline-primary btn-sm mb-2" id="btn_reset" style="width: 60%;">Reset</button>
+											</div>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					
+
+				<!-- /content area -->
+				</div>
+			</div>
+			<!-- /inner content -->
+
+		</div>
+		<!-- /main content -->
+
+	</div>
+	<!-- /page content -->
+
+	<script src="/scr/store/store.js"></script>
+
+	<script src="/global_assets/plugins/forms/validation/validate.min.js"></script>
+	<script src="/global_assets/plugins/notifications/sweet_alert.min.js"></script>
+	
+	<script src="/global_assets/plugins/ag-grid-enterprise/dist/ag-grid-enterprise.min.noStyle.js"></script>
+	<script src="/global_assets/plugins/select2/select2.min.js"></script>
+
+</body>
+
+</html>

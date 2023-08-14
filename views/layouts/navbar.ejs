@@ -1,0 +1,47 @@
+ <!-- Main navbar -->
+    <!-- <div class="navbar navbar-expand-lg navbar-dark navbar-static"> -->
+    
+        <div class="navbar navbar-expand-lg navbar-dark navbar-static px-2" style="background-color: #FFF; margin: 5px; border-radius: 5px;">
+            <div class="d-flex flex-1 d-lg-none">
+                <button class="navbar-toggler sidebar-mobile-main-toggle" type="button">
+                    <i class="icon-transmission"></i>
+                </button>
+            </div>
+    
+            <div class="navbar-brand text-center text-lg-left pt-2 pb-2">
+                <a href="/store" class="d-inline-block" style="margin: 5px;">
+                    <img src="/global_assets/images/qurba.png" class="d-none d-sm-block" alt="" style="height: 2.5rem;">
+                    <!-- <img src="/global_assets/images/telkomsel.png" class="d-none d-sm-block" alt="" style="height: 2.125rem;"> -->
+                    <!-- <img src="/global_assets/images/lgwhite.png" class="pt-1 d-sm-none" alt="" style="height: 2.125rem;"> -->
+                </a>
+            </div>
+    
+            <div class="collapse navbar-collapse order-2 order-lg-1 justify-content-center" id="navbar-mobile">
+                <!-- <span class="lead text-uppercase text-white"><b>Service Orchestration</b></span> -->
+            </div>
+    
+            <!-- <ul class="navbar-nav flex-row order-1 order-lg-2 flex-1 flex-lg-0 justify-content-end align-items-center">
+                <li class="nav-item nav-item-dropdown-lg dropdown">
+                    <span class="d-none d-sm-block" id="clocks"></span>
+                </li>
+    
+                <li class="nav-item nav-item-dropdown-lg dropdown dropdown-user h-100">
+                    <a href="#" class="navbar-nav-link navbar-nav-link-toggler dropdown-toggle d-inline-flex align-items-center h-100" data-toggle="dropdown">
+                        <img src="/global_assets/images/user-circle.png" class="rounded-pill mr-lg-2" height="34" alt="">
+                        <span class="d-none d-lg-inline-block"><%= usr.username %></span>
+                    </a>
+    
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a href="/logout" class="dropdown-item" id="logout_web"><i class="icon-switch2"></i> Logout</a>
+                    </div>
+                </li>
+            </ul> -->
+        </div>
+    <!-- /main navbar -->
+    
+    <script>
+        $('#logout_web').click(function(){
+            localStorage.removeItem("usr")
+        });
+    </script>
+    

@@ -1,0 +1,103 @@
+	<!-- Main sidebar -->
+    <div class="sidebar sidebar-light sidebar-main sidebar-expand-lg sidebar-main-resized shadow-none">
+        <!-- <div class="sidebar sidebar-light sidebar-main sidebar-expand-lg sidebar-main-resized" style="background-color: #1c2d50;"> -->
+    
+        <!-- Sidebar content -->
+        <div class="sidebar-content" style="justify-content: center;">
+
+            <!-- User menu -->
+            <div class="sidebar-section">
+                <div class="sidebar-user-material">
+                    <div class="sidebar-section-body d-sm-none">
+                        <div class="d-flex">
+                            <!-- <div class="flex-1">
+                                <button type="button" class="btn btn-primary border-transparent btn-icon btn-sm rounded-pill">
+                                    <i class="icon-wrench"></i>
+                                </button>
+                            </div> -->
+                            <div class="flex-1 text-right">
+                                <button type="button" class="btn btn-primary border-transparent btn-icon rounded-pill btn-sm sidebar-control sidebar-main-resize d-none d-lg-inline-flex">
+                                    <i class="icon-transmission"></i>
+                                </button>
+
+                                <button type="button" class="btn btn-primary border-transparent btn-icon rounded-pill btn-sm sidebar-mobile-main-toggle d-lg-none">
+                                    <i class="icon-cross2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                                                
+                </div>
+
+            </div>
+            <!-- /user menu -->
+
+            <!-- Main navigation -->
+            <div class="sidebar-section">
+                <ul class="nav nav-sidebar " data-nav-type="accordion">
+
+                    <!-- Main -->
+
+                    <li class="nav-item">
+                        <a href="/store" class="nav-link <% if (menuId === 'Store') { %> active text-white <% } %>">
+                            <i class="fas fa-store"></i>
+                            <span>
+                                Store
+                            </span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="/sales" class="nav-link <% if (menuId === 'Sales') { %> active text-white <% } %>">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <span>
+                                Sales
+                            </span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="/report" class="nav-link <% if (menuId === 'Report') { %> active text-white <% } %>">
+                            <i class="fas fa-file-alt"></i>
+                            <span>
+                                Report
+                            </span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="/profile" class="nav-link <% if (menuId === 'Profile') { %> active text-white <% } %>">
+                            <i class="fas fa-user-alt"></i>
+                            <span>
+                                Profile
+                            </span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="/logout" class="nav-link">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                    
+                    <!-- /page kits -->
+
+                </ul>
+            </div>
+            <!-- /main navigation -->
+
+        </div>
+        <!-- /sidebar content -->
+<!--         
+        <ul class="nav nav-sidebar " data-nav-type="accordion" style="margin-bottom: 30px;">
+            <li class="nav-item">
+                <a href="/logout" class="nav-link">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </li>
+        </ul> -->
+        
+    </div>
+    <!-- /main sidebar -->

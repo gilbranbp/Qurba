@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<% include ../layouts/head %>
+	<link rel="stylesheet" href="/global_assets/plugins/ag-grid-community/dist/styles/ag-grid.css">
+	<link rel="stylesheet" href="/global_assets/plugins/ag-grid-community/dist/styles/ag-theme-alpine.css">
+</head>
+<style>
+	
+	.ag-cell-label-container, .ag-header-icon {
+		color: #4d5763;
+	}
+
+	.ag-header-row {
+		background-color: #FCFBFB;
+	}
+
+	.ag-root-wrapper {
+		border-radius: 5px;
+	}
+	
+	[class^='select2'] {
+		border-radius: 4px !important;
+	}
+	
+	.searchInput {
+		width: 100%;
+		padding: 10px;
+		font-size: 14px;
+		border-radius: 10px;
+		border: none;
+		outline: none;
+		background-color: #F9F8F6;
+	}
+
+	.item-big-image {
+		border-radius: 10px;
+		width: 100%;
+		height: 50vh;
+	}
+
+	.item-image {
+		border-radius: 10px;
+		max-width: 100%;
+  		height: auto;
+	}
+
+</style>
+
+<body>
+	<% include ../layouts/navbar %>
+
+	<!-- Page content -->
+	<div class="page-content">
+		<% include ../layouts/sidebar %>
+
+		<!-- Main content -->
+		<div class="content-wrapper">
+			<!-- Inner content -->
+			<div class="content-inner">
+
+				<!-- Content area -->
+				<div class="content" style="width: 90%; margin: auto;">
+
+					<div class="row">
+						<div class="col-12">
+							<nav>
+								<div class="nav nav-tabs" id="nav-tab" role="tablist">
+								  <a class="nav-item nav-link active" id="nav-1-tab" data-toggle="tab" href="#nav-1" role="tab" aria-controls="nav-1" aria-selected="true">Profile</a>
+								  <a class="nav-item nav-link" id="nav-2-tab" data-toggle="tab" href="#nav-2" role="tab" aria-controls="nav-2" aria-selected="false">Store</a>
+								</div>
+							</nav>
+							<div class="tab-content" id="nav-tabContent">
+								<div class="tab-pane fade show active" id="nav-1" role="tabpanel" aria-labelledby="nav-1-tab">
+									<div class="row">
+										<div class="col-12">
+											<div class="card shadow-none">
+												<div class="card-body">
+													<div class="form-group row mb-2">
+														<label class="col-form-label col-sm-3">Name<span class="text-danger"></span></label>
+														<div class="col-lg-9">
+															<input type="text" name="nama" class="form-control" required placeholder="Name" id="i_name">
+														</div>
+													</div>
+													<div class="form-group row mb-2">
+														<label class="col-form-label col-sm-3">Email<span class="text-danger"></span></label>
+														<div class="col-sm-9">
+															<input type="email" name="email"  class="form-control" required placeholder="Email" id="i_email">
+														</div>
+													</div>
+													<div class="form-group row mb-2">
+														<label class="col-form-label col-sm-3">Phone No.<span class="text-danger"></span></label>
+														<div class="col-sm-9">
+															<input type="text" name="numbers"  class="form-control" required placeholder="No.telp" id="i_phone">
+														</div>
+													</div>
+													<div class="mt-1" id="err_create" style="display:none"></div>
+													<div class="d-flex justify-content-end align-items-center m-0">
+														<button class="btn btn-primary ml-1" id="btn_save">Update</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="tab-pane fade" id="nav-2" role="tabpanel" aria-labelledby="nav-2-tab">
+									<div class="row">
+										<div class="col-12">
+											<div class="card shadow-none">
+												<div class="card-body">
+													<div class="form-group row mb-2">
+														<label class="col-form-label col-sm-3">Store Name<span class="text-danger"></span></label>
+														<div class="col-lg-9">
+															<input type="text" name="store_name" class="form-control" required placeholder="MY STORE" id="i_store_name">
+														</div>
+													</div>
+													<div class="form-group row mb-2">
+														<label class="col-form-label col-sm-3">Location<span class="text-danger"></span></label>
+														<div class="col-lg-9">
+															<select class="filter text-basic" name="i_store_location" id="i_store_location" style="width: 100%;">
+																<option></option>
+																<option value="DPP TM, UUM">DPP TM, UUM</option>
+																<option value="DPP MISC, UUM">DPP MISC, UUM</option>
+																<option value="DPP PROTON, UUM">DPP PROTON, UUM</option>
+																<option value="DPP BSN, UUM">DPP BSN, UUM</option>
+																<option value="DPP PETRONAS, UUM">DPP PETRONAS, UUM</option>
+																<option value="DPP MAYBANK, UUM">DPP MAYBANK, UUM</option>
+																<option value="DPP MAS, UUM">DPP MAS, UUM</option>
+																<option value="DPP YAB, UUM">DPP YAB, UUM</option>
+																<option value="DPP BANK RAKYAT, UUM">DPP BANK RAKYAT, UUM</option>
+																<option value="OUTSIDE UUM">OUTSIDE UUM</option>
+															</select>
+															<!-- <input type="text" name="store_location" class="form-control" required placeholder="Store Location" id="i_store_location"> -->
+														</div>
+													</div>
+													<div class="form-group row mb-2">
+														<label class="col-form-label col-sm-3">Contact<span class="text-danger"></span></label>
+														<div class="col-lg-9">
+															<input type="text" name="store_contact" class="form-control" required placeholder="60123456789" id="i_store_contact">
+														</div>
+													</div>
+													<div class="form-group row mb-2">
+														<label class="col-form-label col-sm-3">Link<span class="text-danger"></span></label>
+														<div class="col-lg-9">
+															<input type="text" name="store_link" class="form-control" required placeholder="Instagram, Tiktok, etc." id="i_store_link">
+														</div>
+													</div>
+													<div class="mt-1" id="err_create_store" style="display:none"></div>
+													<div class="d-flex justify-content-end align-items-center m-0">
+														<button class="btn btn-primary ml-1" id="btn_create_store">Create</button>
+														<button class="btn btn-primary ml-1" id="btn_update_store">Update</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="col-12">
+											<div class="card shadow-none" id="part_items">
+												<div class="card-header pt-2 pb-2">
+													<div class="d-flex">
+														<div class="mr-auto p-2">
+															<h5 class="m-0">List of Bundle</h5>
+														</div>
+														<div class="p-2">
+															<button class="btn btn-success ml-1" id="btn_add_bundle">Add Bundle</button>
+														</div>
+													  </div>
+												</div>
+												<div class="card-body">
+													<div class="row" id="card_my_bundle">
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="row">
+										<div class="col-12">
+											<div class="card shadow-none" id="part_items">
+												<div class="card-header pt-2 pb-2">
+													<div class="d-flex">
+														<div class="mr-auto p-2">
+															<h5 class="m-0">List of Item</h5>
+														</div>
+														<div class="p-2">
+															<button class="btn btn-success ml-1" id="btn_add_item">Add Item</button>
+														</div>
+													  </div>
+												</div>
+												<div class="card-body">
+													<div class="row" id="card_my_items">
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="modal_add_item" class="modal fade" data-backdrop="static"></div>
+					<div id="modal_add_bundle" class="modal fade" data-backdrop="static"></div>
+
+					<!-- <div class="row">
+						<div class="col-2">
+							<img class='item-image' id='' src="/global_assets/images/store.png" alt="">
+						</div>
+						<div class="col-10">
+							<h5 class="m-0" id="detail_store_name"></h5>
+							<span id="detail_store_rating">
+							</span>
+							<br>
+							<a href="" class="m-0" id="detail_store_contact"></a>
+							<p class="m-0 text-muted" id="detail_store_location"></p>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-12">
+							<div class="card shadow-none" id="part_items">
+								<div class="card-header pt-2 pb-2">
+									<h5 class="m-0">All Item</h5>
+								</div>
+								<div class="card-body">
+									<div class="row" id="card_items">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div> -->
+
+				<!-- /content area -->
+				</div>
+			</div>
+			<!-- /inner content -->
+
+		</div>
+		<!-- /main content -->
+
+	</div>
+	<!-- /page content -->
+
+	<script src="/scr/profile/profile.js"></script>
+
+	<script src="/global_assets/plugins/forms/validation/validate.min.js"></script>
+	<script src="/global_assets/plugins/notifications/sweet_alert.min.js"></script>
+	
+	<script src="/global_assets/plugins/ag-grid-enterprise/dist/ag-grid-enterprise.min.noStyle.js"></script>
+	<script src="/global_assets/plugins/select2/select2.min.js"></script>
+
+</body>
+
+</html>
